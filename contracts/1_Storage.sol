@@ -26,9 +26,9 @@ contract MyShop {
         emit BalanceAdded(msg.sender, msg.value);
     }
 
-    // Функция, возвращающая баланс контракта
-    function getBalance() public view returns (uint256) {
-        return address(this).balance;
+    // Функция, возвращающая баланс конкретного пользователя
+    function getBalance(address user) public view returns (uint256) {
+        return address(user).balance;
     }
 
     // Функция для вывода средств из смарт-контракта с проверкой наличия достаточного баланса для вывода
